@@ -42,3 +42,33 @@ void securityScreening() {
 
     cout << "Security Screening Completed\n";
 }
+void immigration() {
+    cout << "\nImmigration Process\n";
+
+    cout << "Passenger boards flight\n";
+    cout << "Flight departs\n";
+    cout << "Flight lands\n";
+
+    char ans;
+    cout << "Does passenger have a connecting flight? (y/n): ";
+    cin >> ans; ans = tolower(ans);
+
+    if (ans == 'y') {
+        cout << "Proceed to security screening again for connection\n";
+        securityScreening();
+        return;
+    }
+
+    cout << "Passenger leaves flight\n";
+
+    cout << "Permit to enter country granted? (y/n): ";
+    cin >> ans; ans = tolower(ans);
+
+    if (ans == 'y') {
+        cout << "Claim baggage\n";
+        cout << "End\n";
+    } else {
+        cout << "Entry denied Passenger sent back to originating country\n";
+        cout << "End\n";
+    }
+}
